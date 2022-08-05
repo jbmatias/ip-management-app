@@ -7,6 +7,12 @@ import { Component, Watch, Provide, Mixins } from 'vue-property-decorator'
 })
 export default class AppSettingMixins extends Mixins() {
   
+  get nameRules() {
+    return [
+      (v: any) => !!v || "Name is required",      
+    ];
+  }
+
   get emailRules() {
     return [
       (v: any) => !!v || 'Email is required',
@@ -18,9 +24,10 @@ export default class AppSettingMixins extends Mixins() {
     return [
       (v: any) => !!v || "Password is required",
       (v: any) =>
-        (v && v.length > 3) || "Password should be atleast 3 characters",
+        (v && v.length > 3) || "Password should be atleast 4 characters",
     ];
   }
+    
 
   get labelRules() {
     return [
