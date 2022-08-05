@@ -41,13 +41,7 @@ import { IgetIpAddresses, IIpAddress } from "~/services/application.service";
   }
 })
 export default class Manage extends Mixins(AppSettingMixins) {
-  loading: boolean = false;
-  form = {
-    name: "",    
-    email: "",    
-    password: "",
-    repeatPassword: ""
-  };
+  loading: boolean = false;  
   
   ipAddresses: Array<IIpAddress> = []
 
